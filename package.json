@@ -1,0 +1,43 @@
+{
+  "name": "factis",
+  "version": "1.0.0",
+  "description": "The factis database system",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Factisio/factis.git"
+  },
+  "keywords": [
+    "graph",
+    "database",
+    "data",
+    "rdf",
+    "triple",
+    "store",
+    "js",
+    "inference",
+    "hexastore"
+  ],
+  "author": "Vincent Lecrubier <vincent.lecrubier@gmail.com> (http://www.vincentlecrubier.fr/)",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/Factisio/factis/issues"
+  },
+  "homepage": "https://github.com/Factisio/factis#readme",
+  "dependencies": {
+    "factis-core": "^1.0.0",
+    "factis-store-group": "^1.0.0",
+    "factis-store-hexastore": "^1.0.0",
+    "factis-store-identity": "^1.0.0",
+    "lodash": "^3.9.3"
+  },
+  "devDependencies": {
+    "jest-cli": "^0.4.13"
+  },
+  "jest" : {
+    "collectCoverage":"true"
+  }
+}
