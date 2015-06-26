@@ -37,7 +37,7 @@ Factis.prototype.remove = function(element) {
     if (element.x == "fact") {
       this.hexastore.remove(element.a);
     } else {
-      throw new Error('Hexastore can only add facts or arrays of facts');
+      throw new Error('Hexastore can only remove facts or arrays of facts');
     }
   }
 };
