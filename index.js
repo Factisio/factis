@@ -1,4 +1,4 @@
-var Core= require('factis-core');
+var Core = require('factis-core');
 var Group = require('factis-store-group');
 var Hexastore = require('factis-store-hexastore');
 var Identity = require('factis-store-identity');
@@ -13,25 +13,37 @@ function Factis() {
 }
 
 Factis.prototype.add = function(element) {
-  if(_.isArray(element)){
-    _.forEach(element,function(x){this.hexastore.add(x.a);});
+  if (_.isArray(element)) {
+    var hexastore = this.hexastore;
+    _.forEach(element, function(x) {
+      hexastore.add(x.a);
+    });
   } else {
-    if(element.x == "fact")
+    if (element.x == "fact") {
       this.hexastore.add(element.a);
+    } else {
+      throw new Error('Hexastore can only add facts or arrays of facts');
+    }
   }
 };
 
 Factis.prototype.remove = function(element) {
-  if(_.isArray(element)){
-    _.forEach(element,function(x){this.hexastore.remove(x.a);});
+  if (_.isArray(element)) {
+    var hexastore = this.hexastore;
+    _.forEach(element, function(x) {
+      hexastore.remove(x.a);
+    });
   } else {
-    if(element.x == "fact")
+    if (element.x == "fact") {
       this.hexastore.remove(element.a);
+    } else {
+      throw new Error('Hexastore can only add facts or arrays of facts');
+    }
   }
 };
 
 Factis.prototype.query = function(query) {
-  return Core.query(query,this.store);
+  return Core.query(query, this.store);
 };
 
 
